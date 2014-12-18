@@ -2,14 +2,18 @@
 <resources>
 
     <string name="app_name">EventApp</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_newsfeed">Nyheder</string>
+    <string name="title_activites">Aktiviteter</string>
+    <string name="title_friends">Venner</string>
+    <string name="title_my_activities">Mine Aktiviteters</string>
+    <string name="title_attended">Deltaget i</string>
+    <string name="title_settings">Indstillinger</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+<<<<<<< HEAD
     <string name="title_activity_login">LoginActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="create_login_button">Opret login</string>
@@ -17,5 +21,9 @@
     <string name="password_text">Password</string>
     <string name="username_text">Brugernavn</string>
 
+=======
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="hello_world">Hello world!</string>
+>>>>>>> ea6da4209cf73139a5690657a90afca45c6dd291
 
 </resources>

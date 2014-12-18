@@ -116,13 +116,22 @@ public class MainActivity extends ActionBarActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.title_newsfeed);
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2);
+                mTitle = getString(R.string.title_activites);
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3);
+                mTitle = getString(R.string.title_friends);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_my_activities);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_attended);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_settings);
                 break;
         }
     }
@@ -165,7 +174,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-        
+
     }
 
     /**
