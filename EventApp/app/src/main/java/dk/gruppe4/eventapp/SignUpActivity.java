@@ -6,63 +6,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.app.DialogFragment;
+import android.widget.Toast;
 
-import java.io.Console;
 import java.util.Calendar;
 
 
 public class SignUpActivity extends ActionBarActivity {
+    private static final int MY_DATE_DIALOG_ID = 3;
+    private DatePicker picker;
 
 
-
-
-
-
-    private TextView mDateDisplay;
-    private Button mPickDate;
-    static final int DATE_DIALOG_ID = 0;
-
-    private int mYear;
-    private int mMonth;
-    private int mDay;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        picker = (DatePicker) findViewById(R.id.datePicker);
 
-        //SKAL SLETTES IGEN
-        //EventConnection ec = new EventConnection();
-        //System.out.println(ec.GetAllEvents());
-        //HER TIL
-
-        mDateDisplay = (TextView) findViewById(R.id.showMyDate);
-        mPickDate = (Button) findViewById(R.id.myDatePickerButton);
-
-        mPickDate.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                showDialog(DATE_DIALOG_ID);
-            }
-        });
-
-        final Calendar c = Calendar.getInstance();
-        mYear = c.get(Calendar.YEAR);
-        mMonth = c.get(Calendar.MONTH);
-        mDay = c.get(Calendar.DAY_OF_MONTH);
-
-        updateDisplay();
     }
 
-    private void updateDisplay() {
-        this.mDateDisplay.setText(
-                new StringBuilder()
-                        // Month is 0 based so add 1
-                        .append(mMonth + 1).append("-")
-                        .append(mDay).append("-")
-                        .append(mYear).append(" "));
+    public void onDateSelectedButtonClick(View v){
+        int day = picker.getDayOfMonth();
+        int month = picker.getMonth() + 1;
+        int year = picker.getYear();
+
+        Toast.makeText(this, day + "/" + month + "/" + year, Toast.LENGTH_SHORT).show();
     }
 
     @Override
