@@ -14,34 +14,32 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
 
-/**
- * Created by Reigstad on 17-12-2014.
- */
+
 public class EventConnection {
 
     private  String response = "";
 
     public String GetAllEvents()
     {
-        String urlString = "http://localhost:51938/";
-        String parameters = "Event/get";
-        InputStream inputStream = null;
+        URL url;
+        String urlString = "http://42345.9220.ovh/";
+        String parameters = "api/location";
         //HTTP Get
         try {
-            DefaultHttpClient httpClient = new DefaultHttpClient();
-            HttpEntity httpEntity = null;
-            HttpResponse httpResponse = null;
+            url = new URL(urlString + parameters);
+            URLConnection connection;
+            connection = url.openConnection();
 
-            HttpGet httpGet = new HttpGet(urlString + parameters);
-            httpResponse = httpClient.execute(httpGet);
-            inputStream = httpResponse.getEntity().getContent();
-
-            if(inputStream != null)
+            HttpURLConnection httpConnection = (HttpURLConnection) connection;
+            int responseCode = httpConnection.getResponseCode();
+            if(responseCode == HttpURLConnection.HTTP_OK)
             {
-                response = convertInputStreamToString(inputStream);
+                InputStream in = httpConnection.getInputStream();
+                String s = in.toString();
+                response = convertInputStreamToString(in);
             }
-
         }
         catch (Exception e)
         {

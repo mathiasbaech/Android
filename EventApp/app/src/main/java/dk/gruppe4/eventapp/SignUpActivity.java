@@ -27,6 +27,15 @@ public class SignUpActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         picker = (DatePicker) findViewById(R.id.datePicker);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                EventConnection ec = new EventConnection();
+                System.out.println(ec.GetAllEvents());
+            }
+        }).start();
+
     }
 
     public void onDateSelectedButtonClick(View v){
