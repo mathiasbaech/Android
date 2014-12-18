@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/txtBirthday"
         android:calendarViewShown="false"
-        android:
+
         />
 
     <Button
