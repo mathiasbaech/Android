@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.app.DialogFragment;
 
+import java.io.Console;
 import java.util.Calendar;
 
 
@@ -33,7 +34,10 @@ public class SignUpActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-
+        //SKAL SLETTES IGEN
+        //EventConnection ec = new EventConnection();
+        //System.out.println(ec.GetAllEvents());
+        //HER TIL
 
         mDateDisplay = (TextView) findViewById(R.id.showMyDate);
         mPickDate = (Button) findViewById(R.id.myDatePickerButton);
